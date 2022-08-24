@@ -1,0 +1,7 @@
+bun.lockb
+package-lock.json
+yarn.lock
+node_modules/
+videos/
+yarn-error.log
+config.json

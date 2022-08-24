@@ -1,0 +1,22 @@
+{
+    "name": "kebab-remover",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "sh0tx420 <sh0tx.cosmoline@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "bufferutil": "^4.0.6",
+        "discord.js": "^14.2.0",
+        "erlpack": "discord/erlpack",
+        "fluent-ffmpeg": "^2.1.2",
+        "node-downloader-helper": "^2.1.3",
+        "utf-8-validate": "^5.0.9",
+        "zlib-sync": "^0.1.7"
+    },
+    "scripts": {
+        "bot": "node src/index.js"
+    },
+    "devDependencies": {
+        "eslint": "^8.21.0"
+    }
+}
