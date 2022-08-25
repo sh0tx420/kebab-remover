@@ -19,7 +19,7 @@ JSON schema:
 }
 ```
 - `dtoken`: The token of the Discord bot to use.
-- `save_dest`: Destination to save the videos to (and analyze videos from). This must be an absolute path.
+- `save_dest`: Destination to save the videos to (and analyze videos from).
 - `size_limit`: File size limit for the videos in MBs.
 - `wipe_ready`: Wipes the videos folder when the bot starts up, if set to **true**.
 - `ignore_channels`: Array of channel IDs that are ignored. The bot won't download any videos from these channels, if specifed.
