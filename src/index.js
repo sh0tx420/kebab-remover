@@ -3,6 +3,8 @@ const { Client, GatewayIntentBits } = require("discord.js");
 const config = require("../config.json");
 const analyze_video = require("./analyze_video");
 const Logger = require("./utils/logger");
+const { readdirSync, unlinkSync } = require("node:fs");
+const { resolve } = require("node:path");
 
 // wtf why did i write such a bad implementation
 const logger = new Logger();
@@ -15,9 +17,17 @@ const client = new Client({
     ]
 });
 
+
 client.once("ready", bot => {
     for (const i of ["Bot login successful.", `Username: ${bot.user.tag}`, `User ID: ${bot.user.id}`]) {
         logger.info(i);
+    }
+
+    if (config.wipe_ready) {
+        const files = readdirSync(config.save_dest);
+        for (const file of files) {
+            unlinkSync(resolve(config.save_dest, file));
+        }
     }
 });
 
