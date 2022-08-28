@@ -38,6 +38,11 @@ client.on("messageCreate", message => {
     if (attachment != undefined) {
         if (attachment.url.includes(".mp4")) analyze_video(attachment.url);
     }
+
+    // also check for tiktok links
+    if (message.content.includes("tiktok")) {  // keyword check before doing 1203912938 regex checks
+        if (message.content.match(/https?:\/\/(vm|www)?\.tiktok/)) message.delete();
+    }
 });
 
 /* Detect videos sent with an URL
@@ -45,8 +50,7 @@ client.on("messageCreate", message => {
 *  NOTE: this might not work 100% of the time
 */
 client.on("messageUpdate", (_, message) => {
-    const regex = /https?.*?\.mp4/;
-    if (message.content.match(regex)) {
+    if (message.content.match(/https?.*?\.mp4/)) {
         analyze_video(message.content);
     }
 });
